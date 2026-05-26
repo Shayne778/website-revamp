@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Screen Doctor of Lee County | Website Revamp Concept</title>
+  <meta name="description" content="Website revamp concept mockup for The Screen Doctor of Lee County, Inc." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #020617;
+      --panel: rgba(15, 23, 42, 0.72);
+      --panel2: rgba(30, 41, 59, 0.72);
+      --line: rgba(255,255,255,0.12);
+      --cyan: #22d3ee;
+      --cyan2: #67e8f9;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --muted2: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #020617 0%, #0f172a 48%, #020617 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 18px 80px; }
+    header {
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 32px;
+      padding: 14px 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.86);
+      backdrop-filter: blur(14px);
+    }
+    .eyebrow { margin: 0 0 2px; color: var(--cyan2); font-size: 14px; }
+    .brand { margin: 0; font-weight: 800; letter-spacing: -0.02em; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 800;
+      background: var(--cyan);
+      color: #020617;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .button.secondary { background: transparent; color: var(--text); border-color: rgba(255,255,255,0.22); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 34px;
+      align-items: stretch;
+      padding: 38px;
+      border: 1px solid rgba(103,232,249,0.22);
+      border-radius: 34px;
+      background: radial-gradient(circle at top left, rgba(34,211,238,0.16), transparent 34%), var(--panel);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+    }
+    .pill {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #cffafe;
+      background: rgba(34,211,238,0.14);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h1 { margin: 0; max-width: 760px; font-size: clamp(36px, 6vw, 62px); line-height: 1.02; letter-spacing: -0.055em; }
+    h2 { margin: 0; font-size: clamp(26px, 3vw, 38px); line-height: 1.1; letter-spacing: -0.035em; }
+    h3 { margin: 0; color: #cffafe; }
+    p { color: var(--muted); }
+    .lead { max-width: 660px; margin: 20px 0 0; font-size: 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .photo {
+      min-height: 150px;
+      display: flex;
+      align-items: end;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      color: #cbd5e1;
+      background: linear-gradient(135deg, rgba(51,65,85,0.95), rgba(15,23,42,0.95));
+      font-size: 13px;
+    }
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 28px; }
+    .stat, .card, .trust li, .quote, .area {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+    }
+    .stat { padding: 18px; }
+    .stat span { display: block; color: #bae6fd; font-size: 14px; }
+    .stat strong { display: block; margin-top: 4px; }
+    section { margin-top: 56px; }
+    .section-copy { max-width: 740px; margin: 10px 0 0; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 24px; }
+    .card { padding: 22px; }
+    .card p { margin-bottom: 0; font-size: 15px; }
+    .trust { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 20px; padding: 28px; border: 1px solid var(--line); border-radius: 26px; background: var(--panel); }
+    .trust ul { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .trust li { padding: 18px; background: var(--panel2); color: #e2e8f0; }
+    .gallery { display: grid; grid-template-columns: repeat(6,1fr); gap: 12px; margin-top: 20px; }
+    .tile { aspect-ratio: 1; display: flex; align-items: end; padding: 10px; border-radius: 16px; border: 1px solid var(--line); color: var(--muted2); background: var(--panel2); font-size: 12px; }
+    .areas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .area { padding: 8px 12px; color: #cffafe; background: rgba(34,211,238,0.1); border-color: rgba(103,232,249,0.3); }
+    .quote { padding: 28px; border-color: rgba(34,211,238,0.32); }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+    label { color: #e2e8f0; font-size: 14px; font-weight: 700; }
+    input, textarea { width: 100%; margin-top: 7px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.18); background: rgba(30,41,59,0.86); color: white; padding: 12px; font: inherit; }
+    textarea { min-height: 112px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .note { color: var(--muted2); font-size: 12px; }
+    @media (max-width: 860px) {
+      header, .hero, .trust { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+      .hero { padding: 24px; }
+      .stats, .cards, .gallery, .trust ul, form { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <p class="eyebrow">Private concept mockup</p>
+        <p class="brand">The Screen Doctor of Lee County, Inc.</p>
+      </div>
+      <a class="button" href="#quote">Request Free Estimate</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="pill">Serving Southwest Florida homeowners</span>
+        <h1>Screen Repair, Pool Enclosures, and Storm Protection for Southwest Florida Homes</h1>
+        <p class="lead">The Screen Doctor of Lee County helps homeowners in Fort Myers, Cape Coral, Bonita Springs, Estero, and nearby communities repair, enclose, and protect outdoor living spaces.</p>
+        <div class="actions">
+          <a class="button" href="#quote">Request a Free Estimate</a>
+          <a class="button secondary" href="tel:2394827502">Call 239-482-7502</a>
+        </div>
+      </div>
+      <div class="photo-grid" aria-label="Project photo placeholders">
+        <div class="photo">Pool Enclosure Photo Placeholder</div>
+        <div class="photo">Lanai Project Placeholder</div>
+        <div class="photo">Storm Shutter Placeholder</div>
+        <div class="photo">Front Entry Placeholder</div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Business trust signals">
+      <div class="stat"><span>Serving homeowners since</span><strong>1995*</strong></div>
+      <div class="stat"><span>Licensed Contractor</span><strong>CBC1252537</strong></div>
+      <div class="stat"><span>Locally Owned</span><strong>Eric &amp; Mindy Peterson</strong></div>
+      <div class="stat"><span>Recognition Listed</span><strong>Angi Super Service Awards</strong></div>
+    </section>
+
+    <section>
+      <h2>Core Services</h2>
+      <div class="cards">
+        <article class="card"><h3>Screen Repair &amp; Renovation</h3><p>Rescreening and structural updates for lanais, enclosures, and entries.</p></article>
+        <article class="card"><h3>Pool &amp; Patio Enclosures</h3><p>Custom enclosure improvements designed for comfort and long-term durability.</p></article>
+        <article class="card"><h3>Hurricane Shutters &amp; Panels</h3><p>Storm-prep options for homeowners looking to protect outdoor openings.</p></article>
+        <article class="card"><h3>Front Entries &amp; Screen Doors</h3><p>Entryway screening options including sliding and custom-fit door solutions.</p></article>
+        <article class="card"><h3>Florida Rooms &amp; Lanais</h3><p>Upgrade usable outdoor living space with enclosure and screen system options.</p></article>
+        <article class="card"><h3>Insulated Roof Systems</h3><p>Roof and shade additions to improve comfort in Southwest Florida conditions.</p></article>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div>
+        <h2>Trust &amp; Reputation</h2>
+        <p>This concept uses publicly visible trust signals from the current website and prospect notes. Exact wording can be finalized with owner confirmation.</p>
+      </div>
+      <ul>
+        <li>Florida State Certified Building Contractor license listed on current website.</li>
+        <li>General liability and workers compensation coverage references present on current website.</li>
+        <li>Multiple service categories and project photos currently published.</li>
+        <li>A+ BBB rating is mentioned in prospect research.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Project Gallery Preview</h2>
+      <p class="section-copy">Placeholder blocks for existing project photos from the current website.</p>
+      <div class="gallery">
+        <div class="tile">Project photo 1</div><div class="tile">Project photo 2</div><div class="tile">Project photo 3</div><div class="tile">Project photo 4</div><div class="tile">Project photo 5</div><div class="tile">Project photo 6</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Service Areas</h2>
+      <p class="section-copy">Serving Southwest Florida communities listed in current business materials.</p>
+      <div class="areas">
+        <span class="area">Fort Myers</span><span class="area">Cape Coral</span><span class="area">Bonita Springs</span><span class="area">Estero</span><span class="area">Sanibel</span><span class="area">Pine Island</span><span class="area">Lee County</span><span class="area">Collier County</span>
+      </div>
+    </section>
+
+    <section id="quote" class="quote">
+      <h2>Request a Quote</h2>
+      <p class="section-copy">Form layout concept for lead capture. Submission handling would be connected during production build.</p>
+      <form>
+        <label>Full Name<input /></label>
+        <label>Phone<input /></label>
+        <label>Email<input /></label>
+        <label>Property City<input /></label>
+        <label>Service Needed<input /></label>
+        <label>Preferred Contact Method<input /></label>
+        <label class="full">Project Details<textarea></textarea></label>
+        <button class="button full" type="button">Send Quote Request</button>
+      </form>
+      <p class="note">*Concept note: timing, service availability, and final claim language should be verified with the business owner.</p>
+    </section>
+  </main>
+</body>
+</html>
