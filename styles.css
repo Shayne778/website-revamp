@@ -8,9 +8,9 @@ body { margin: 0; font-family: Inter, Arial, sans-serif; background: #020617; co
 .kicker { margin: 0; color: #67e8f9; font-size: 14px; }
 .tagline { margin: 4px 0 0; font-weight: 700; }
 .btn { display: inline-block; border-radius: 999px; padding: 11px 18px; text-decoration: none; font-weight: 700; border: 1px solid transparent; }
-.btn-primary { background: #22d3ee; color: #082f49; }
+.btn-primary { background: #facc15; color: #1f2937; }
 .btn-outline { border-color: rgba(255,255,255,.3); color: #e2e8f0; }
-.hero { border-bottom: 1px solid rgba(255,255,255,.1); background: linear-gradient(135deg,#0f172a,#020617,#000); }
+.hero { border-bottom: 1px solid rgba(255,255,255,.1); background: radial-gradient(circle at 20% 20%, #1d4ed8 0%, #0f172a 38%, #020617 72%, #000 100%); }
 .hero-grid { display: grid; gap: 28px; padding: 56px 0; }
 .badge { display: inline-block; border: 1px solid rgba(103,232,249,.4); color: #cffafe; background: rgba(34,211,238,.1); border-radius: 999px; padding: 6px 12px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
 h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.12; margin: 16px 0; }
